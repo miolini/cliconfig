@@ -8,7 +8,7 @@ import (
 	"github.com/urfave/cli"
 )
 
-func FillFlagsFromStruct(config interface{}, envPrefix string) []cli.Flag {
+func Fill(config interface{}, envPrefix string) []cli.Flag {
 	configValue := reflect.Indirect(reflect.ValueOf(config))
 	var flags []cli.Flag
 	for i := 0; i < configValue.NumField(); i++ {
