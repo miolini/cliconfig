@@ -51,3 +51,4 @@ GLOBAL OPTIONS:
    --listen_addr_flag value  (default: "localhost:8080") [$EXAMPLE_APP_LISTEN_ADDR_ENV]
    --help, -h                show help
    --version, -v             print the version
+```
