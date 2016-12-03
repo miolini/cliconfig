@@ -33,7 +33,8 @@ func main() {
 
 Usage
 
-```$ ./simple  --help
+```shell
+$ ./simple  --help
 command-line-arguments
 NAME:
    example-app - A new cli application
