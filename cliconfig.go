@@ -9,6 +9,7 @@ import (
 	"github.com/urfave/cli"
 )
 
+//Fill func get config struct and envPrefix to collect Urfave Cli slice of cli.Flag
 func Fill(config interface{}, envPrefix string) []cli.Flag {
 	configValue := reflect.Indirect(reflect.ValueOf(config))
 	var flags []cli.Flag
