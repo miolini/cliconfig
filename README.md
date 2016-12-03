@@ -1,5 +1,11 @@
-# cliconfig
+cliconfig
+=========
+
 Urfawe Cli flags setup from config struct fields
+
+[![Build Status](https://travis-ci.org/miolini/cliconfig.svg?branch=master)](https://travis-ci.org/miolini/cliconfig)
+[![GoDoc](https://godoc.org/github.com/miolini/cliconfig?status.svg)](https://godoc.org/github.com/miolini/cliconfig)
+[![Go Report Card](https://goreportcard.com/badge/miolini/cliconfig)](https://goreportcard.com/report/miolini/cliconfig)
 
 ## Example
 
