@@ -4,6 +4,7 @@ import (
 	"reflect"
 	"strconv"
 	"strings"
+	"os"
 
 	"github.com/serenize/snaker"
 	"github.com/urfave/cli"
@@ -51,4 +52,13 @@ func Fill(config interface{}, envPrefix string) []cli.Flag {
 func intFromString(s string) int {
 	val, _ := strconv.Atoi(s)
 	return val
+}
+
+//FillAndRun function for simpler fill config and run cli app
+func FillAndRun(config interface{}, appName, envPrefix string, handler func(*cli.Context) error) error {
+	app := cli.NewApp()
+	app.Name = appName
+	app.Flags = Fill(&config, envPrefix)
+	app.Action = handler
+	return app.Run(os.Args)
 }
