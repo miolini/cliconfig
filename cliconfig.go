@@ -44,6 +44,19 @@ func Fill(config interface{}, envPrefix string) []cli.Flag {
 				Value:       intFromString(fieldType.Tag.Get("default")),
 			}
 			flags = append(flags, flag)
+		case reflect.Slice:
+			if fieldType.Type.Elem().Kind() == reflect.String {
+				values := strings.Split(fieldType.Tag.Get("default"), ",")
+				values2 := cli.StringSlice(values)
+				fieldValue.Set(reflect.ValueOf(values))
+				flag := cli.StringSliceFlag {
+					Name:        flagName,
+					EnvVar:      envName,
+//					Destination: fieldValue.Addr().Interface().(*[]string),
+					Value:       &values2,
+				}
+				flags = append(flags, flag)
+			}
 		}
 	}
 	return flags
